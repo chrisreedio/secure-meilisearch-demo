@@ -13,6 +13,12 @@ class ListPeople extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
+            Actions\Action::make('reindex')
+                ->label('Reindex')
+                ->icon('heroicon-o-arrow-path')
+                ->action(function () {
+                    self::$resource::getModel()::flushSearchIndex();
+                }),
             Actions\CreateAction::make(),
         ];
     }
