@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "chrisreedio/filament-secure-meilisearch": "dev-main",
         "chrisreedio/laravel-secure-meilisearch": "dev-main",
         "filament/filament": "^3.0-stable",
         "http-interop/http-factory-guzzle": "^1.2",
@@ -75,6 +76,10 @@
         {
             "type": "path",
             "url": "../../laravel/laravel-secure-meilisearch"
+        },
+        {
+            "type": "path",
+            "url": "../../filament/filament-secure-meilisearch"
         }
     ]
 }
