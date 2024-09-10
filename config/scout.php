@@ -134,9 +134,31 @@ return [
         'host' => env('MEILISEARCH_HOST', 'http://localhost:7700'),
         'key' => env('MEILISEARCH_KEY'),
         'index-settings' => [
-            // 'users' => [
-            //     'filterableAttributes'=> ['id', 'name', 'email'],
-            // ],
+            env('SCOUT_PREFIX', '').'people' => [
+                'searchableAttributes' => [
+                    'name',
+                    'email',
+                    'phone',
+                    'birthday',
+                ],
+                'filterableAttributes' => [
+                    //
+                ],
+                'stopWords' => ['the', 'a', 'an'],
+                'sortableAttributes' => ['first_name', 'last_name'],
+                'rankingRules' => [
+                    // 'start_timestamp:asc',
+                    'words',
+                    'typo',
+                    'proximity',
+                    'attribute',
+                    'sort',
+                    'exactness',
+                ],
+                'typoTolerance' => [
+                    'enabled' => true,
+                ],
+            ],
         ],
     ],
 
