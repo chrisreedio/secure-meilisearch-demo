@@ -2,10 +2,14 @@
     "name": "laravel/laravel",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "keywords": [
+        "laravel",
+        "framework"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "chrisreedio/laravel-secure-meilisearch": "dev-main",
         "filament/filament": "^3.0-stable",
         "http-interop/http-factory-guzzle": "^1.2",
         "laravel/framework": "^11.9",
@@ -65,6 +69,12 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "stable",
-    "prefer-stable": true
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../laravel/laravel-secure-meilisearch"
+        }
+    ]
 }

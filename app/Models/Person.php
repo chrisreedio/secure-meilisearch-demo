@@ -2,14 +2,16 @@
 
 namespace App\Models;
 
+use ChrisReedIO\SecureMeilisearch\Contracts\SearchUser;
+use ChrisReedIO\SecureMeilisearch\Traits\HasSearchKeys;
 use ChrisReedIO\SecureMeilisearch\Traits\SearchFlush;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Scout\Searchable;
 
-class Person extends Model
+class Person extends Model implements SearchUser
 {
-    use HasFactory, Searchable, SearchFlush;
+    use HasFactory, Searchable, SearchFlush, HasSearchKeys;
 
     protected $fillable = [
         'name',
